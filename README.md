@@ -21,7 +21,7 @@ echo -n "password" | md5sum > hash.txt
 💡 Explication :  
 * ``echo -n "password"`` :  
 ✅ Le -n empêche le saut de ligne à la fin (par défaut, echo ajoute un \n).  
-👉 Sans -n, tu aurais le hash de ``"password\n"`` (ce qui donnerait un résultat complètement différent).  
+👉 Sans -n, on aurait le hash de ``"password\n"`` (ce qui donnerait un résultat complètement différent).  
 
 * ``| md5sum :``  
 ✅ Passe la sortie de echo dans le programme md5sum, qui calcule le hash MD5.  
