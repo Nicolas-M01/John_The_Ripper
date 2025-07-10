@@ -1,5 +1,7 @@
 
-# 🔐 John the Ripper – Guide Pratique (eJPT Ready)
+# 🔐 John the Ripper – Guide Pratique (eJPT Ready)  
+
+---  
 
 > Un guide simple et rapide pour apprendre à utiliser **John the Ripper**, l’outil de craquage de mots de passe, essentiel pour les CTF et la certification **eJPT**.
 
@@ -28,3 +30,40 @@ echo -n "password" | md5sum > hash.txt
 
 * ``> hash.txt`` :  
 ✅ Redirige le résultat (le hash suivi de -) dans un fichier nommé ``hash.txt``.  
+
+Contenu de hash.txt :  
+``5f4dcc3b5aa765d61d8327deb882cf99``  
+
+## 🧠 Craquer un hash avec une wordlist  
+```
+john --format=raw-md5 --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
+```
+💡 Explication :  
+| Élément                                       | Description                                                                               |
+| --------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `john`                                        | Lance l’outil **John the Ripper**                                                         |
+| `--format=raw-md5`                            | Spécifie le **type de hash** à cracker. Ici : `raw-md5` = hash MD5 simple (32 caractères) |
+| `--wordlist=/usr/share/wordlists/rockyou.txt` | Indique le **chemin de la wordlist** à utiliser (ici, la célèbre `rockyou.txt`)           |
+| `hash.txt`                                    | Fichier contenant le ou les **hashs à cracker**                                           |
+
+
+
+### 📌 Afficher le mot de passe trouvé :  
+```
+john --show hash.txt  
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
