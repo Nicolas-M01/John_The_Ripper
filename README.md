@@ -90,6 +90,68 @@ rockyou.txt (disponible par défaut sous Kali) :
 /usr/share/wordlists/rockyou.txt
 ```
 
+## 💡 Commandes utiles
+|Fonction|	Commande|
+|-|-|
+|Cracker un hash|	john hash.txt|
+|Reprendre un crack interrompu|	john --restore|
+|Voir les résultats (mots de passe)|	john --show hash.txt|
+|Voir les formats supportés|	john --list=formats|
+|Lancer avec wordlist + format|	john --wordlist=wordlist.txt --format=... hash.txt|
+|Aide|	john --help|
+
+## 🔬 Formats de hash courants
+|Type de Hash|	Format| John	Exemple|
+|-|-|-|
+|MD5|	--format=raw-md5|	5f4dcc3b5aa765d61d8327deb882cf99|
+|SHA1|	--format=raw-sha1|	da39a3ee5e6b4b0d3255bfef95601890afd80709|
+|NTLM|	--format=nt|	8846f7eaee8fb117ad06bdd830b7586c|
+|bcrypt|	--format=bcrypt|	$2y$10$...|
+
+
+## ✅ Ce qu’il faut savoir pour l’eJPT
+* Cracker des hashs simples (MD5, SHA1, NTLM, bcrypt)
+
+* Identifier un type de hash
+
+* Utiliser une wordlist (ex: rockyou)
+
+* Extraire des hashs avec zip2john, pdf2john, unshadow
+
+* Lire les résultats (--show)
+
+* Relancer une session (--restore)
+
+
+## 🔁 Générer des hashs pour s’entraîner
+
+### MD5
+```
+echo -n "admin" | md5sum
+```
+
+### SHA1
+```
+echo -n "admin" | sha1sum
+```
+
+### NTLM
+```
+python3 -c 'import hashlib; print(hashlib.new("md4", "admin".encode("utf-16le")).hexdigest())'
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
