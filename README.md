@@ -54,14 +54,41 @@ john --show hash.txt
 ```
 
 
+## 🧰 Outils d’extraction de hash  
+### 🔐 ZIP :  
+```
+zip2john secret.zip > zip.hash
+john zip.hash
+```
+### 📄 PDF :  
+```
+pdf2john.pl fichier.pdf > pdf.hash
+john pdf.hash
+```
+
+### 🧑‍💻 /etc/passwd + /etc/shadow :  
+```
+unshadow /etc/passwd /etc/shadow > fullshadow.txt
+john fullshadow.txt
+```
 
 
+## 🔍 Identifier le type de hash  
+Avec John :
+```
+john --list=formats
+```
 
+Avec hashid (outil tiers) :
+```
+hashid hash.txt
+```
 
-
-
-
-
+## 📚 Wordlists recommandées
+rockyou.txt (disponible par défaut sous Kali) :
+```
+/usr/share/wordlists/rockyou.txt
+```
 
 
 
